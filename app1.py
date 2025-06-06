@@ -4,7 +4,15 @@ import streamlit as st
 
 car_data = pd.read_csv('vehicles_us.csv') # leer los datos
 
-st.header("Anuncios de ventas de coches")
+st.header("Anuncios de ventas de coches") # encabezado
+
+datos_checkbox = st.checkbox('Mostrar la tabla de datos') 
+
+if datos_checkbox:
+
+    st.write('Anuncios de ventas de coches')
+
+    st.dataframe(car_data)
 
 hist_button = st.button('Crear histograma')
 
